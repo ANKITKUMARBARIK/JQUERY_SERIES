@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : change()</title>
+</head>
+
+<body style="background: #333; color: aliceblue;">
+    <select style="font-size: 2rem;">
+        <option>Discipline</option>
+        <option>Consistency</option>
+        <option>Hard Work</option>
+        <option>Self-Love</option>
+    </select>
+
+
+    <script>
+        $(document).ready(() => {
+            $('select').change(function () {
+                alert('You have selected: ' + $(this).val());
+            });
+        });
+    </script>
+</body>
+
+</html>
