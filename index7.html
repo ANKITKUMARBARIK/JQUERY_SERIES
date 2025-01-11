@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : hide() and show()</title>
+</head>
+<body style="background: #333; color: aliceblue; font-size: 2rem;"> 
+    <h2>Hello me dev ! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos delectus esse consequuntur est! Similique deserunt amet ullam odit ad commodi?</h2>
+    <button id="hide">Hide Me</button>
+    <button id="show">Show Me</button>
+
+
+    <script>
+        $(document).ready(()=>{
+            $('#hide').click(()=>{
+                $('h2').hide()
+            })
+            $('#show').click(()=>{
+                $('h2').show()
+            })
+        })
+    </script>
+</body>
+</html>
