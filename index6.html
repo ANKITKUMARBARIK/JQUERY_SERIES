@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : mouseenter() and mouseleave()</title>
+</head>
+<body style="background: #333; color: aliceblue; font-size: 3rem;">
+    <span id="enter">Plz mouseenter me</span>     <br><br><br><br>
+    <span id="leave">Plz mouseleave me</span>
+
+
+    <script>
+        $(document).ready(()=>{
+            $('#enter').mouseenter(()=>{
+                alert('cursor is enter')
+            })
+
+            $('#leave').mouseleave(()=>{
+                alert('cursor is leave')
+            })
+        })
+    </script>
+</body>
+</html>
