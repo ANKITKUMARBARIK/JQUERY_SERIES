@@ -19,12 +19,12 @@ This repository includes:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/ANKITKUMARBARIK/JQUERY-SERIES.git
+   git clone https://github.com/ANKITKUMARBARIK/JQUERY_SERIES.git
    ```
 
 2. **Navigate to the folder**:
    ```bash
-   cd JQUERY-SERIES
+   cd JQUERY_SERIES
    ```
 
 3. Open the `.html` files in any browser to view the examples! 🌐  
