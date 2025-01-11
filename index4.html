@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : focus()</title>
+</head>
+<body style="background: black; color: whitesmoke;">
+    <input type="text">
+    <span style="display: none;">Keep Coding !</span>
+    <p>Click in the input field to get focus.</p>
+
+
+    <script>
+        $(document).ready(()=>{
+            $('input').focus(()=>{
+                $('span').css('display','inline').fadeOut(2000)
+            })
+        })
+    </script>
+</body>
+</html>
