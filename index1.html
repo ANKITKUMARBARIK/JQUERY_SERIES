@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : click() and hover()</title>
+</head>
+<body style="background: black; color: whitesmoke;">
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sed? Facilis earum ipsam dolorem maiores, et nulla porro alias aliquam voluptatum eum aspernatur dolore natus. Quia omnis asperiores provident magnam!</p>
+    <button id="btn">Click me and Hide para</button>
+
+    <br><br>
+    
+    <button id="btngoogle">Hide Google</button>
+    <a href="https://www.google.com" target="_blank" style="color: aliceblue;">Google</a>
+
+    <script>
+        $(document).ready(()=>{
+            $('#btn').click(()=>{     // $('#btn').hover(()=>{
+                $('#para').hide()     //$('*').hide()
+            })
+
+            $('#btngoogle').click(()=>{     // $('#btn').hover(()=>{
+                $('[href]').hide()         // $('[target=_blank]').hide()
+            })
+        })
+    </script>
+</body>
+</html>
