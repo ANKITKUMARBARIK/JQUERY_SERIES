@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : dblclick</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae sapiente, hic obcaecati quaerat ex perspiciatis. Fugiat temporibus aperiam veniam minus amet iure aliquam id tenetur labore fuga explicabo eius non repellendus eligendi sint, sequi aliquid impedit vitae molestias veritatis? Ut sapiente facere numquam quibusdam porro amet, nihil deserunt fugiat magni!</p>
+    <button>Plx double click me</button>
+
+
+    <script>
+        $(document).ready(()=>{
+            $('button').dblclick(()=>{
+                $('p').hide()
+            })
+        })
+    </script>
+</body>
+</html>
