@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Events : keyup() and keydown()</title>
+</head>
+<body style="background: black; color: aliceblue;">
+    <div id="box" style="background: magenta; color: black; padding: 10px;">
+        <h2>Vision Gallery</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ab placeat dolores sequi natus saepe nam unde esse, quis iusto similique, deleniti autem. Saepe enim aperiam earum placeat eligendi quam unde expedita nobis dolorum porro voluptatibus reprehenderit eveniet voluptatem doloremque numquam deserunt voluptates eius amet id, fugiat nulla eos delectus.</p>
+    </div>
+
+
+    <script>
+        $(document).ready(()=>{
+            $('body').keyup(()=>{
+                $('#box').css('background','yellow')
+            })
+
+            $('body').keydown(()=>{
+                $('#box').css('background','green')
+            })
+        })
+    </script>
+</body>
+</html>
