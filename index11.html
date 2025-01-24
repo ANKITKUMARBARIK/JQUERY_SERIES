@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>get Attribute</title>
+</head>
+
+<body style="background: #222; color: aliceblue;">
+    <button id="btnOne">Link here Attribute</button>
+    <button id="btnTwo">Image alt Attribute</button>
+    <a href="https://www.google.com" target="_blank">Google</a>
+    <img src="https://images.pexels.com/photos/2683940/pexels-photo-2683940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        width="200px" id="birds" alt="birds">
+    <p><input type="checkbox"><label for="">I agree with terms and conditions</label></p>
+    <button id="btnThree">Check</button>
+
+    <script>
+        $(document).ready(() => {
+            $("#btnOne").click(() => {
+                const a = $("a").attr("href")
+                alert(a)
+            })
+            $("#btnTwo").click(() => {
+                const a = $("#birds").attr("alt")
+                alert(a)
+            })
+            $("#btnThree").click(() => {
+                $("input").attr("checked", "type")
+            })
+        })
+    </script>
+</body>
+
+</html>
