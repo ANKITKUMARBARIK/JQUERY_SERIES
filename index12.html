@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>get & set HTML</title>
+</head>
+
+<body style="background: #222; color: aliceblue;">
+    <button id="btnOne">Get Html</button>
+    <button id="btnTwo">Get Last h1</button>
+    <button id="btnThree">Set Html</button>
+    <div id="container">Lorem ipsum dolor sit amet consectetur <h3>Hello</h3> adipisicing elit.</div>
+    <h1>Hello Ji</h1>
+    <h1>Good Morning Ji</h1>
+
+    <script>
+        $(document).ready(() => {
+            $("#btnOne").click(() => {
+                const a = $("#container").html()
+                alert(a)
+            })
+            $("#btnTwo").click(() => {
+                const a = $("h1:last").html()
+                alert(a)
+            })
+            $("#btnThree").click(() => {
+                $("#container").html("<h1>Mein Huun Ji</h1>")
+            })
+        })
+    </script>
+</body>
+
+</html>
