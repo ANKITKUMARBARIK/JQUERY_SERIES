@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>get Value</title>
+</head>
+
+<body style="background: #222; color: aliceblue;">
+    <button id="btnOne">Get value from input</button>
+    <button id="btnTwo">Get value from option</button><br><br>
+    <input type="text" value="Oy ji Good Morning">
+    <select name="" id="select">Lang
+        <option value="NxtJs">NxtJs</option>
+        <option value="Js">Js</option>
+        <option value="Ts">Ts</option>
+    </select>
+
+    <script>
+        $(document).ready(() => {
+            $("#btnOne").click(() => {
+                const a = $("input").val()
+                alert(a)
+            })
+            $("#btnTwo").click(() => {
+                const a = $("#select").val()
+                alert(a)
+            })
+        })
+    </script>
+</body>
+
+</html>
