@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>set Method</title>
+</head>
+
+<body style="background: #222; color: aliceblue;">
+    <button id="btnOne">Set All Para</button>
+    <button id="btnTwo">Set First Para</button>
+    <button id="btnThree">Set Empty Para</button>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quidem.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, quidem.</p>
+    City : <input type="text" id="input" value="I am here sirji">
+
+    <script>
+        $(document).ready(() => {
+            $("#btnOne").click(() => {
+                $("p").text("I am changed sirji")
+            })
+            $("#btnTwo").click(() => {
+                $("p:first").text("I am changed sirji")
+            })
+            $("#btnThree").click(() => {
+                const a = $("#input").val();
+                alert(a)
+            })
+        })
+    </script>
+</body>
+
+</html>
