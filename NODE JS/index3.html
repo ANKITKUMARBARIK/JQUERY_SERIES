@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX XMLHTTPREQUEST</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+    <button onclick="func()">CLICK</button>
+    
+    <script>
+        const demo = document.querySelector('#demo')
+        const func = () => {
+            const http = new XMLHttpRequest()
+            const method = 'GET'
+            const url = 'login.txt'
+            http.open(method, url, true)
+
+            http.onreadystatechange = () => {
+                console.log(http.readyState)
+                if (http.readyState === XMLHttpRequest.DONE && http.status === 200) {
+                    const data = http.responseText
+                    demo.innerHTML = data
+                } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
+                    console.log('Error !');
+                } else {
+                    console.log('Something went wrong !')
+                }
+            }
+            http.send()
+        }
+
+    </script>
+</body>
+
+</html>
