@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>USER ID</th>
+                <th>JOB NAME</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+            </tr>
+        </thead>
+        <tbody id="content">
+            <!-- content add using ajax -->
+        </tbody>
+    </table>
+
+
+    <script>
+        $(document).ready(()=>{
+            $.getJSON('emp.json', (data)=>{
+                let emp = ''
+                $.each(data, (key,value)=>{
+                    emp += '<tr>';
+                        emp += '<td>' + value.userId + '</td>';
+                        emp += '<td>' + value.jobName + '</td>';
+                        emp += '<td>' + value.firstName + '</td>';
+                        emp += '<td>' + value.lastName + '</td>';
+                    emp += '</tr>';
+                })
+                $('#content').append(emp)
+            })
+        })
+    </script>
+</body>
+</html>

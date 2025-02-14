@@ -1,0 +1,20 @@
+[
+    {
+        "userId": "rirani",
+        "jobName": "Developer",
+        "firstName": "Romin",
+        "lastName": "Irani"
+    },
+    {
+        "userId": "nirani",
+        "jobName": "Developer",
+        "firstName": "Neil",
+        "lastName": "Irani"
+    },
+    {
+        "userId": "thanks",
+        "jobName": "Program Directory",
+        "firstName": "Tom",
+        "lastName": "Hanks"
+    }
+]
