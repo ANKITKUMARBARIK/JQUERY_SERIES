@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item>
+        <name>Product 1</name>
+        <value>100</value>
+    </item>
+    <item>
+        <name>Product 2</name>
+        <value>200</value>
+    </item>
+    <item>
+        <name>Product 3</name>
+        <value>300</value>
+    </item>
+</items>

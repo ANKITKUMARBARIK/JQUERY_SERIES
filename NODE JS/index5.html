@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Item Value</th>
+            </tr>
+        </thead>
+        <tbody id="itemBody">
+        </tbody>
+    </table>
+
+
+    <script>
+        $(document).ready(()=>{
+            $.ajax({
+                type: 'GET',
+                url: 'one.xml',
+                dataType: 'xml',
+                success: function(data){
+                    $(data).find('item').each(function(){
+                        const itemName = $(this).find('name').text() 
+                        const itemValue = $(this).find('value').text() 
+                        $('#itemBody').append('<tr><td>'+itemName+'</td><td>'+itemValue+'</td></tr>')
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>
