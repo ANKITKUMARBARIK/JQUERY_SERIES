@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background: #333;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- JQUERY EVENTS -->
+    <p id="para">click()</p>
+    <br><br><br>
+    <input type="text" id="userInput" placeholder="keypress()">
+    <p id="count">0</p>
+    <br><br><br>
+    <input type="text" id="focusInput" placeholder="focus()">
+    <p id="focusFade" style="display: none;">Hey buddy</p>
+    <br><br><br>
+    <input type="text" id="blurInput" placeholder="blur">
+    <br><br><br>
+    <select name="" id="changeInput">
+        <option value="change()">change()</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Mobile">Mobile</option>
+        <option value="HeadPhone">HeadPhone</option>
+    </select>
+    <br><br><br>
+    <!-- JQUERY EFFECTS -->
+     <p id="show" style="display: none;">Lorem ipsum dolor sit amet. : Show</p>
+     <p id="hide">Lorem ipsum dolor sit amet. : Hide</p>
+     <button id="effBtn">Show / Hide</button>
+     <br><br><br>
+     <p id="fadeinout">fadeIn() fadeOut() fadeToggle()</p>
+     <button id="fadeoutBtn">Fade out</button>
+     <button id="fadeinBtn">Fade in</button>
+     <button id="fadeToggle">Fade Toggle</button>
+     <p id="fadeTo">fadeTo()</p>
+     <button id="fadetoBtn">Fade To</button>
+     <br><br><br>
+     <button id="slideupBtn">Slide Up()</button>
+     <p id="slideup" style="padding: 30px; background-color: lightgreen;">slideUp</p>
+     <button id="slidedownBtn">Slide Down()</button>
+     <p id="slidedown" style="display: none; padding: 30px; background-color: lightgreen;">slideDown</p>
+     <button id="slidetoggleBtn">Slide Toggle()</button>
+     <p id="slidetoggle" style="padding: 30px; background-color: lightgreen;">slideToggle</p>
+     <button id="stopBtn">Stop SlideToggle</button>
+      <br><br><br>
+      <!-- GET/SET METHODS -->
+       <p id="gettext">Get the valuable text</p>
+       <button id="gettextBtn">get text()</button>
+       <p id="settext"></p>
+       <button id="settextBtn">set text()</button>
+       <br><br><br>
+       <a href="www.google.com" id="getattr">Get attribute</a>
+       <button id="getattrBtn">Get attr()</button>
+       <input type="checkbox" name="" id="setattr"><label for="">Terms 7 conditions</label>
+       <button id="setattrBtn">Set attr()</button>
+       <br><br><br>
+       <p id="gethtml">Get Html <b>Good Morning</b></p>
+       <button id="gethtmlBtn">Get html()</button>
+       <p id="sethtml"></p>
+       <button id="sethtmlBtn">Set html()</button>
+       <br><br><br>
+       <input type="text" id="getval">
+       <button id="getvalBtn">Get val()</button>
+       <input type="text" id="setval">
+       <input type="text" name="" id="setvalText">
+       <button id="setvalBtn">Set val()</button>
+       <br><br><br>
+       <!-- INSERT & REMOVE ELEMENTS METHODS -->
+        <p id="appendprependText">Hello append me </p>
+        <button id="appendprependBtn">append() prepend()</button>
+        <br><br><br>
+        <p id="afterbeforeText">Mein sab huun after and before</p>
+        <button id="afterbeforeBtn">after() before()</button>
+        <br><br><br>
+        <p id="wrapunwrapText">Mujhe wrap krdo</p>
+        <button id="wrapBtn">wrap()</button>
+        <button id="unwrapBtn">unwrap()</button>
+        <br><br><br>
+        <p id="removeText">Mein hatt rha hu bhai</p>
+        <button id="removeBtn">remove()</button>
+        <br><br><br>
+        <p id="emptyText">Mera element ka text empty ho rha h</p>
+        <button id="emptyBtn">empty()</button>
+        <br><br><br>
+
+    <script>
+        $(()=>{
+            $("#para").click(()=>{              // .hover()
+                alert('Para is clicked')
+            })
+            // 
+            let count = 1
+            $("#userInput").keypress(()=>{
+                $("#count").text(count++)
+            })
+            // 
+            $("#focusInput").focus(()=>{
+                $("#focusFade").css({display: "flex"}).fadeOut(2000)
+            })
+            // 
+            $("#blurInput").blur(()=>{
+                alert('focus blur without touch')
+            })
+            // 
+            $("#changeInput").change(()=>{
+                alert('when changed')
+            })
+            // 
+            $("#effBtn").click(()=>{
+                $("#show").show(1000,()=> alert("show completed"))
+                $("#hide").hide(1000, ()=> alert("hide completed"))
+            })
+            // 
+            $("#fadeinBtn").click(()=>{
+                $("#fadeinout").fadeIn(1000)
+            })
+            $("#fadeoutBtn").click(()=>{
+                $("#fadeinout").fadeOut(1000)
+            })
+            $("#fadeToggle").click(()=>{
+                $("#fadeinout").fadeToggle(2000)
+            })
+            $("#fadetoBtn").click(()=>{
+                $("#fadeTo").fadeTo("slow",0.20)  // slow / fast , opacity
+            })
+            // 
+            $("#slideupBtn").click(()=>{
+                $("#slideup").slideUp(2000)   // slow/fast/milliseconds
+            })
+            $("#slidedownBtn").click(()=>{
+                $("#slidedown").slideDown(2000)   // slow/fast/milliseconds
+            })
+            $("#slidetoggleBtn").click(()=>{
+                $("#slidetoggle").slideToggle(2000)   // slow/fast/milliseconds
+            })
+            $("#stopBtn").hover(()=>{
+                $("#slidetoggle").stop()
+            })
+            // 
+            $("#gettextBtn").click(()=>{
+                const temp = $("#gettext").text()
+                alert(temp)
+            })
+            $("#settextBtn").click(()=>{
+                $("#settext").text("Set the valuable text")
+            })
+            // 
+            $("#getattrBtn").click(()=>{
+                const temp = $("#getattr").attr("href")
+                alert(temp)
+            })
+            $("#setattrBtn").click(()=>{
+                $('input[type="checkbox"]').attr("checked","checked")
+            })
+            // 
+            $("#gethtmlBtn").click(()=>{
+                const temp = $("#gethtml").html()
+                alert(temp)
+            })
+            $("#sethtmlBtn").click(()=>{
+                $("#sethtml").html("<h2>Kaise ho bhai</h2>")
+            })
+            // 
+            $("#getvalBtn").click(()=>{
+                const temp = $("#getval").val()
+                alert(temp)
+            })
+            $("#setvalBtn").click(()=>{
+                const temp = $("#setval").val()
+                $("#setvalText").val(temp)
+            })
+            // 
+            $("#appendprependBtn").click(()=>{
+                $("#appendprependText").append("<b>Aur batao<b>")
+            })
+            $("#appendprependBtn").click(()=>{
+                $("#appendprependText").prepend("<b>Kab btaoge<b> ")
+            })
+            // 
+            $("#afterbeforeBtn").click(()=>{
+                $("#afterbeforeText").after("<b>Mein pehle hoon n<b> <br>")
+            })
+            $("#afterbeforeBtn").click(()=>{
+                $("#afterbeforeText").before("<b>Mein baadmein hoon n<b> ")
+            })
+            // 
+            $("#wrapBtn").click(()=>{
+                $("#wrapunwrapText").wrap("<div></div>")
+            })
+            $("#unwrapBtn").click(()=>{
+                $("#wrapunwrapText").unwrap()
+            })
+            // 
+            $("#removeBtn").click(()=>{
+                $("#removeText").remove()
+            })
+            // 
+            $("#emptyBtn").click(()=>{
+                $("#emptyText").empty()
+            })
+            // 
+        })
+    </script>
+</body>
+</html>
