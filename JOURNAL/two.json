@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Product A",
+        "value": 100
+    },
+    {
+        "name": "Product B",
+        "value": 200
+    },
+    {
+        "name": "Product C",
+        "value": 300
+    }
+]

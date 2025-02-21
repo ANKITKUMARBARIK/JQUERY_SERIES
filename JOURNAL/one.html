@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            background: #333;
+            color: aliceblue;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ItemName</th>
+                <th>ItemValue</th>
+            </tr>
+        </thead>
+        <tbody id="itemBody">
+        </tbody>
+    </table>
+
+    <br><br><br>
+
+    <img src="https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="" id="myImg">
+    <button id="toggleBtn">Show/Hide Image</button>
+
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                type: 'GET',
+                url: 'one.xml',
+                dataType: 'xml',
+                success: (data)=> {
+                    $(data).find('item').each(function () {
+                        const itemName = $(this).find('name').text()
+                        const itemValue = $(this).find('value').text()
+                        $('#itemBody').append('<tr><td>' + itemName + '</td><td>' + itemValue + '</td></tr>')
+                    })
+                }
+            })
+            $("#toggleBtn").click(() => {
+                $("#myImg").toggle(500)
+            })
+        })
+    </script>
+</body>
+
+</html>

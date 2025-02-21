@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            background: #333;
+            color: aliceblue;
+        }
+
+        #imageContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ItemName</th>
+                <th>ItemValue</th>
+            </tr>
+        </thead>
+        <tbody id="itemBody">
+
+        </tbody>
+    </table>
+
+    <br><br><br>
+
+    <div id="imageContainer">
+        <img id="dynamicImage"
+            src="https://images.pexels.com/photos/110812/pexels-photo-110812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Rotating Image">
+    </div>
+
+    <script>
+        $(document).ready(() => {
+            $.getJSON('two.json', (data) => {
+                let item = '';
+                $.each(data, (key, value) => {
+                    item += '<tr>';
+                    item += '<td>' + value.name + '</td>';
+                    item += '<td>' + value.value + '</td>';
+                    item += '</tr>';
+                })
+                $("#itemBody").append(item)
+            })
+
+            let images = ["https://images.pexels.com/photos/110812/pexels-photo-110812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/2569232/pexels-photo-2569232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/402556/pexels-photo-402556.jpeg?auto=compress&cs=tinysrgb&w=600", "https://images.pexels.com/photos/55834/chicks-spring-chicken-plumage-55834.jpeg?auto=compress&cs=tinysrgb&w=600"];
+            let index = 0;
+            setInterval(() => {
+                $('#dynamicImage').attr("src", images[++index % images.length]);
+            }, 5000);
+        })
+    </script>
+</body>
+
+</html>
